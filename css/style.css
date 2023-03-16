@@ -12,12 +12,14 @@
 **********************************/
 
 body {
+    font-family: 'Poppins', sans-serif;
+    font-size: .8125rem;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: rgb(0,151,136);
-    background: linear-gradient(180deg, rgba(0,151,136,1) 16%, rgba(223,221,208,1) 16.1%, rgba(210,218,220,1) 100%);
+    background: rgb(0, 151, 136);
+    background: linear-gradient(180deg, rgba(0, 151, 136, 1) 16%, rgba(223, 221, 208, 1) 16.1%, rgba(210, 218, 220, 1) 100%);
 }
 
 .container {
@@ -72,7 +74,7 @@ aside .top .menu .user-picture,
     height: 100%;
     border-radius: 50%;
     overflow: hidden;
-} 
+}
 
 .user-name,
 .contact-name {
@@ -87,8 +89,8 @@ aside .top .menu nav,
     color: #b1b2ad;
 }
 
-aside .top .menu nav > *,
-.main-view header nav > * {
+aside .top .menu nav>*,
+.main-view header nav>* {
     padding: .3125rem;
 }
 
@@ -121,6 +123,7 @@ aside .top .notifications .notifications-content {
 
 aside .top .notifications .notifications-content span {
     color: #3c434d;
+    font-size: .75rem;
 }
 
 aside .top .notifications .notifications-content a {
