@@ -11,11 +11,12 @@ RESET
 COMMON
 ************/
 body {
-    background-color: cadetblue;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background: rgb(0,151,136);
+    background: linear-gradient(180deg, rgba(0,151,136,1) 16%, rgba(219,219,209,1) 16.1%);
 }
 
 .container {
