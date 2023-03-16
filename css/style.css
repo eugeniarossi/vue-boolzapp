@@ -251,9 +251,41 @@ header .contact-picture {
     overflow-y: scroll;
     background-color: #e0d7d0;
     background-image: url('img/mine.jpg');
+    padding: 3.125rem 5.625rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5625rem;
 }
 
+/********** messages classes ********/
+.message {
+    padding: .0625rem .25rem;
+    border-radius: .625rem;
+    display: flex;
+    min-width: 17.5rem;
+    justify-content: space-between;
+}
 
+.message-content {
+    padding: .875rem .6875rem 1.125rem;
+    color: #3c434d;
+}
+
+.message-time {
+    align-self: flex-end;
+    font-size: .75rem;
+    color: #8e8d8b;
+}
+
+.message-sent {
+    align-self: flex-end;
+    background-color: #d5f8be;
+}
+
+.contact-message {
+    align-self: flex-start;
+    background-color: #fff;
+}
 
 /***********************************
  MAIN VIEW - FOOTER ****************/
@@ -278,6 +310,10 @@ header .contact-picture {
     border-radius: .25rem;
     padding: 0 1rem;
     border: 1px solid #fcfcfc;
+}
+
+.main-view footer .message-input input::placeholder {
+    font-size: .8125rem;
 }
 
 .main-view footer .emoji,
