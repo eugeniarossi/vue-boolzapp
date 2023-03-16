@@ -47,7 +47,8 @@ aside {
 /***********************************
  ASIDE TOP ************************/
 
-aside .top .menu {
+aside .top .menu,
+.main-view header {
     height: 3.75rem;
     display: flex;
     align-items: center;
@@ -58,32 +59,37 @@ aside .top .menu {
 
 /******** aside top menu user ********/
 
-aside .top .menu .user {
+aside .top .menu .user,
+.main-view header .header-contact {
     display: flex;
     align-items: center;
     height: 100%;
     flex-grow: 1;
 }
 
-aside .top .menu .user-picture {
+aside .top .menu .user-picture,
+.main-view header .contact-picture {
     height: 100%;
     border-radius: 50%;
     overflow: hidden;
 } 
 
-aside .top .menu .user .user-name {
+.user-name,
+.contact-name {
     color: #3c434d;
 }
 
 /******** aside top menu nav ********/
 
-aside .top .menu nav {
+aside .top .menu nav,
+.main-view header nav {
     padding-right: .25rem;
     color: #b1b2ad;
 }
 
-aside .top .menu nav > * {
-    padding: .375rem;
+aside .top .menu nav > *,
+.main-view header nav > * {
+    padding: .3125rem;
 }
 
 /******** aside top notifications ********/
@@ -194,8 +200,8 @@ aside .contacts .contact .contact-info .contact-name {
     color: #3c434d;
 }
 
-aside .contacts .contact .contact-info .contact-last-message,
-aside .contacts .contact .contact-last-access {
+.contact-last-message,
+.contact-last-access {
     color: #b1b2ad;
 }
 
@@ -209,7 +215,6 @@ aside .contacts .contact .contact-last-access {
 
 .main-view {
     width: 100%;
-    background-color: red;
     display: flex;
     flex-direction: column;
 }
@@ -220,16 +225,29 @@ aside .contacts .contact .contact-last-access {
     flex-direction: column;
 }
 
+/***********************************
+ MAIN VIEW - HEADER ***************/
+
 .main-view header {
-    height: 3.75rem;
-    background-color: white;
+    border-left: none;
+    display: flex;
 }
+
+header .contact-picture {
+    margin-right: .875rem;
+}
+
+/***********************************
+ MAIN VIEW - MAIN *****************/
 
 .main-view main {
     background-color: lightblue;
     flex-grow: 1;
     overflow-y: scroll;
 }
+
+/***********************************
+ MAIN VIEW - FOOTER ****************/
 
 .main-view footer {
     height: 3.75rem;
