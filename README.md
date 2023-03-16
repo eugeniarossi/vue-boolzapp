@@ -32,4 +32,3 @@
 - Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti 
 
 ***
-
