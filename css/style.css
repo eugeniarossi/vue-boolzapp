@@ -16,7 +16,7 @@ body {
     justify-content: center;
     height: 100vh;
     background: rgb(0,151,136);
-    background: linear-gradient(180deg, rgba(0,151,136,1) 16%, rgba(219,219,209,1) 16.1%);
+    background: linear-gradient(180deg, rgba(0,151,136,1) 16%, rgba(223,221,208,1) 16.1%, rgba(210,218,220,1) 100%);
 }
 
 .container {
