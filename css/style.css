@@ -1,3 +1,5 @@
+
+
 /************
 RESET
 ************/
@@ -92,7 +94,29 @@ aside .top .menu nav > * {
 aside .top .notifications {
     height: 4.375rem;
     background-color: #8edafc;
+    display: flex;
+    align-items: center;
+    padding: .75rem 1rem;
 }
+
+aside .top .notifications .notifications-icon {
+    background-color: #f5f9ff;
+    width: 2.6875rem;
+    height: 2.6875rem;
+    border-radius: 50%;
+    color: #8edafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: .5rem;
+}
+
+aside .top .notifications .notifications-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/******** aside top search ********/
 
 aside .top .search {
     height: 2.8125rem;
