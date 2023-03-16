@@ -161,6 +161,45 @@ aside .contacts {
     overflow-y: scroll;
     background-color: #fff;
     flex-grow: 1;
+    border-bottom: .0625rem solid #fafafa;
+}
+
+aside .contacts .contact {
+    display: flex;
+    align-items: center;
+    height: 4.375rem;
+    padding-right: .5625rem;
+    border-bottom: 1px solid #fafafa;
+}
+
+aside .contacts .contact .contact-content {
+    display: flex;
+    flex-grow: 1;
+}
+
+aside .contacts .contact .contact-picture {
+    height: 3.4375rem;
+    width: 3.4375rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 1.0625rem;
+}
+
+aside .contacts .contact .contact-info {
+    flex-grow: 1;
+}
+
+aside .contacts .contact .contact-info .contact-name {
+    color: #3c434d;
+}
+
+aside .contacts .contact .contact-info .contact-last-message,
+aside .contacts .contact .contact-last-access {
+    color: #b1b2ad;
+}
+
+.active-contact {
+    background-color: #e9ebea;
 }
 
 /************
