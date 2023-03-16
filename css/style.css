@@ -11,7 +11,7 @@ RESET
 COMMON
 ************/
 body {
-    background-color: lightskyblue;
+    background-color: cadetblue;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,33 +27,85 @@ body {
     display: flex;
 }
 
+img {
+    max-height: 100%;
+    display: block;
+}
+
 /************
 ASIDE
 ************/
 
 aside {
-    background-color: aqua;
+    background-color: #fff;
     width: 31.25rem;
+    display: flex;
+    flex-direction: column;
 }
 
-aside .top .nav {
+/************
+ASIDE TOP
+************/
+/******** aside top menu ********/
+
+aside .top .menu {
     height: 3.75rem;
-    background-color: green;
+    display: flex;
+    align-items: center;
+    padding: .625rem;
+    background-color: #eaeaea;
+    border: 1px solid #dedede;
 }
+
+/******** aside top menu profile ********/
+
+aside .top .menu .profile {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex-grow: 1;
+}
+
+aside .top .menu .personal-picture {
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+} 
+
+aside .top .menu .profile .profile-name {
+    color: #3c434d;
+}
+
+/******** aside top menu nav ********/
+
+aside .top .menu nav {
+    padding-right: .25rem;
+    color: #b1b2ad;
+}
+
+aside .top .menu nav > * {
+    padding: .375rem;
+}
+
+/******** aside top notifications ********/
 
 aside .top .notifications {
     height: 4.375rem;
-    background-color: violet;
+    background-color: #8edafc;
 }
 
 aside .top .search {
     height: 2.8125rem;
-    background-color: turquoise;
+    background-color: #fafafa;
+    border: 1px solid #fcfcfc;
 }
 
 aside .contacts {
     overflow-y: scroll;
+    background-color: #fff;
+    flex-grow: 1;
 }
+
 /************
 MAIN VIEW
 ************/
