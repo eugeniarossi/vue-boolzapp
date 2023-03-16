@@ -1,15 +1,16 @@
-/************
-RESET
-************/
+/**********************************
+************ RESET ****************
+**********************************/
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/************
-COMMON
-************/
+/**********************************
+************ COMMON ***************
+**********************************/
+
 body {
     display: flex;
     align-items: center;
@@ -32,9 +33,9 @@ img {
     display: block;
 }
 
-/************
-ASIDE
-************/
+/**********************************
+************ ASIDE ****************
+**********************************/
 
 aside {
     background-color: #fff;
@@ -43,10 +44,8 @@ aside {
     flex-direction: column;
 }
 
-/************
-ASIDE TOP
-************/
-/******** aside top menu ********/
+/***********************************
+ ASIDE TOP ************************/
 
 aside .top .menu {
     height: 3.75rem;
@@ -57,22 +56,22 @@ aside .top .menu {
     border: 1px solid #dedede;
 }
 
-/******** aside top menu profile ********/
+/******** aside top menu user ********/
 
-aside .top .menu .profile {
+aside .top .menu .user {
     display: flex;
     align-items: center;
     height: 100%;
     flex-grow: 1;
 }
 
-aside .top .menu .personal-picture {
+aside .top .menu .user-picture {
     height: 100%;
     border-radius: 50%;
     overflow: hidden;
 } 
 
-aside .top .menu .profile .profile-name {
+aside .top .menu .user .user-name {
     color: #3c434d;
 }
 
@@ -156,7 +155,8 @@ aside .top .search .search-input-container input::placeholder {
     font-size: .6875rem;
 }
 
-/******** aside top contacts ********/
+/***********************************
+ ASIDE CONTACTS *******************/
 
 aside .contacts {
     overflow-y: scroll;
@@ -203,9 +203,9 @@ aside .contacts .contact .contact-last-access {
     background-color: #e9ebea;
 }
 
-/************
-MAIN VIEW
-************/
+/**********************************
+********** MAIN VIEW **************
+**********************************/
 
 .main-view {
     width: 100%;
