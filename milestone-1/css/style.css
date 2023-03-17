@@ -250,8 +250,7 @@ header .contact-picture {
     background-color: lightblue;
     flex-grow: 1;
     overflow-y: scroll;
-    background-color: #e0d7d0;
-    background-image: url('img/mine.jpg');
+    background-image: url("../../img/mine.jpg");
     padding: 3.125rem 5.625rem;
     display: flex;
     flex-direction: column;
