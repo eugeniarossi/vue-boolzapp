@@ -76,7 +76,8 @@ aside .top .menu .user,
 
 aside .top .menu .user-picture,
 .main-view header .contact-picture {
-    height: 100%;
+    height: 2.8125rem;
+    width: 2.8125rem;
     border-radius: 50%;
     overflow: hidden;
 }
