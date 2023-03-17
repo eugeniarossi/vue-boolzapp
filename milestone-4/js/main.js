@@ -8,6 +8,7 @@ createApp({
             active: 0,
             newMessage: '',
             answerTime: 1, //sec
+            searchKey: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -202,6 +203,17 @@ createApp({
                     }
                 );
             }, this.answerTime * 1000);
+        },
+        searchChat() {
+            if(this.searchKey !== '') {
+                return this.contacts.filter((item) => {
+                    if(item.name.toLowerCase().includes(this.searchKey.toLowerCase())) {
+                        return item
+                    }
+                })
+            } else {
+                return this.contacts;
+            }
         }
     }
 }).mount('#app');
