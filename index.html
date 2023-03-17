@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,12 +12,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- /google fonts -->
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- /font awesome -->
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- /css -->
 </head>
+
 <body>
     <!-- app -->
     <div id="app" class="container">
@@ -68,118 +72,20 @@
             <div class="contacts">
 
                 <!-- contact -->
-                <div class="contact active-contact">
+                <div v-for="contact in contacts" class="contact active-contact">
                     <div class="contact-content">
                         <div class="contact-picture">
-                            <img src="img/avatar_1.jpg" alt="profile picture">
+                            <img :src="contact.avatar" :alt="contact.name">
                         </div>
                         <div class="contact-info">
-                            <div class="contact-name">Michele</div>
+                            <div class="contact-name">{{ contact.name }}</div>
                             <div class="contact-last-message"><small>Ultimo messaggio inviato</small></div>
                         </div>
                         <div class="contact-last-access"><small>12:00</small></div>
                     </div>
                 </div>
                 <!-- /contact -->
-                <!-- contact -->
-                <div class="contact">
-                    <div class="contact-content">
-                        <div class="contact-picture">
-                            <img src="img/avatar_1.jpg" alt="profile picture">
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-name">Michele</div>
-                            <div class="contact-last-message"><small>Ultimo messaggio inviato</small></div>
-                        </div>
-                        <div class="contact-last-access"><small>12:00</small></div>
-                    </div>
-                </div>
-                <!-- /contact -->
-                <!-- contact -->
-                <div class="contact">
-                    <div class="contact-content">
-                        <div class="contact-picture">
-                            <img src="img/avatar_1.jpg" alt="profile picture">
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-name">Michele</div>
-                            <div class="contact-last-message"><small>Ultimo messaggio inviato</small></div>
-                        </div>
-                        <div class="contact-last-access"><small>12:00</small></div>
-                    </div>
-                </div>
-                <!-- /contact -->
-                <!-- contact -->
-                <div class="contact">
-                    <div class="contact-content">
-                        <div class="contact-picture">
-                            <img src="img/avatar_1.jpg" alt="profile picture">
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-name">Michele</div>
-                            <div class="contact-last-message"><small>Ultimo messaggio inviato</small></div>
-                        </div>
-                        <div class="contact-last-access"><small>12:00</small></div>
-                    </div>
-                </div>
-                <!-- /contact -->
-                <!-- contact -->
-                <div class="contact">
-                    <div class="contact-content">
-                        <div class="contact-picture">
-                            <img src="img/avatar_1.jpg" alt="profile picture">
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-name">Michele</div>
-                            <div class="contact-last-message"><small>Ultimo messaggio inviato</small></div>
-                        </div>
-                        <div class="contact-last-access"><small>12:00</small></div>
-                    </div>
-                </div>
-                <!-- /contact -->
-                <!-- contact -->
-                <div class="contact">
-                    <div class="contact-content">
-                        <div class="contact-picture">
-                            <img src="img/avatar_1.jpg" alt="profile picture">
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-name">Michele</div>
-                            <div class="contact-last-message"><small>Ultimo messaggio inviato</small></div>
-                        </div>
-                        <div class="contact-last-access"><small>12:00</small></div>
-                    </div>
-                </div>
-                <!-- /contact -->
-                <!-- contact -->
-                <div class="contact">
-                    <div class="contact-content">
-                        <div class="contact-picture">
-                            <img src="img/avatar_1.jpg" alt="profile picture">
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-name">Michele</div>
-                            <div class="contact-last-message"><small>Ultimo messaggio inviato</small></div>
-                        </div>
-                        <div class="contact-last-access"><small>12:00</small></div>
-                    </div>
-                </div>
-                <!-- /contact -->
-                <!-- contact -->
-                <div class="contact">
-                    <div class="contact-content">
-                        <div class="contact-picture">
-                            <img src="img/avatar_1.jpg" alt="profile picture">
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-name">Michele</div>
-                            <div class="contact-last-message"><small>Ultimo messaggio inviato</small></div>
-                        </div>
-                        <div class="contact-last-access"><small>12:00</small></div>
-                    </div>
-                </div>
-                <!-- /contact -->
-
+                
             </div>
             <!-- /contacts -->
         </aside>
@@ -227,7 +133,7 @@
                         <div class="message-time">
                             <small>16:00</small>
                         </div>
-                    </div> 
+                    </div>
                     <div class="message contact-message">
                         <div class="message-content">
                             Tutto fatto!
@@ -264,4 +170,5 @@
     <script src="js/main.js"></script>
     <!-- js -->
 </body>
+
 </html>
