@@ -5,6 +5,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            active: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -172,6 +173,15 @@ createApp({
         }
     },
     methods: {
-        
+        selectContact(index) {
+            this.active = index;
+        },
+        time(index) {
+            let dt = this.contacts[this.active].messages[index].date;
+            console.log(dt)
+            dt = dt.split(" ");
+            console.log(dt[1]); 
+            return dt[1];
+        }
     }
 }).mount('#app');
