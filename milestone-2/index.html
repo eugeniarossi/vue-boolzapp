@@ -99,10 +99,10 @@
                     <!-- header contact -->
                     <div class="header-contact">
                         <div class="contact-picture">
-                            <img src="../img/avatar_1.jpg" alt="profile picture">
+                            <img :src="contacts[active].avatar" :alt="contacts[active].name">
                         </div>
                         <div class="contact-info">
-                            <div class="contact-name">Michele</div>
+                            <div class="contact-name">{{ contacts[active].name }}</div>
                             <div class="contact-last-access"><small>Ultimo accesso oggi alle 12:00</small></div>
                         </div>
                     </div>
