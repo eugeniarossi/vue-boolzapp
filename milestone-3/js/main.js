@@ -7,6 +7,7 @@ createApp({
         return {
             active: 0,
             newMessage: '',
+            answerTime: 1, //sec
             contacts: [
                 {
                     name: 'Michele',
@@ -191,6 +192,16 @@ createApp({
                 }
             );
             this.newMessage = '';
+
+            setTimeout(() => {
+                this.contacts[this.active].messages.push(
+                    {
+                        date: '10/01/2020 15:51:00',
+                                message: 'ok',
+                                status: 'received'
+                    }
+                );
+            }, this.answerTime * 1000);
         }
     }
 }).mount('#app');
