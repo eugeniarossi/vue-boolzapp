@@ -178,9 +178,7 @@ createApp({
         },
         time(index) {
             let dt = this.contacts[this.active].messages[index].date;
-            console.log(dt)
             dt = dt.split(" ");
-            console.log(dt[1]); 
             return dt[1];
         }
     }

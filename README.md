@@ -32,3 +32,6 @@
 - Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti 
 
 ***
+
+### todo: 
+- Stampare l'ora dei messaggi nella chat senza secondi
