@@ -230,12 +230,6 @@ aside .contacts .contact .contact-picture {
     flex-direction: column;
 }
 
-.main-view .chat {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
 /***********************************
  MAIN VIEW - HEADER ***************/
 
@@ -300,6 +294,7 @@ header .contact-picture {
     display: flex;
     align-items: center;
     color: #8e8d8b;
+    flex-shrink: 0;
 }
 
 .main-view footer .message-input {

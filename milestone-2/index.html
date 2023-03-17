@@ -72,7 +72,8 @@
             <div class="contacts">
 
                 <!-- contact -->
-                <div v-for="(contact, index) in contacts" class="contact" :class="(index === active) && 'active'" @click="selectContact(index)">
+                <div v-for="(contact, index) in contacts" class="contact" :class="(index === active) && 'active'"
+                    @click="selectContact(index)">
                     <div class="contact-content">
                         <div class="contact-picture">
                             <img :src="contact.avatar" :alt="contact.name">
@@ -85,51 +86,48 @@
                     </div>
                 </div>
                 <!-- /contact -->
-                
+
             </div>
             <!-- /contacts -->
         </aside>
         <!-- /aside -->
         <!-- main view -->
         <div class="main-view">
-            <!-- chat -->
-            <div class="chat">
-                <!-- header -->
-                <header>
-                    <!-- header contact -->
-                    <div class="header-contact">
-                        <div class="contact-picture">
-                            <img :src="contacts[active].avatar" :alt="contacts[active].name">
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-name">{{ contacts[active].name }}</div>
-                            <div class="contact-last-access"><small>Ultimo accesso oggi alle 12:00</small></div>
-                        </div>
+            <!-- header -->
+            <header>
+                <!-- header contact -->
+                <div class="header-contact">
+                    <div class="contact-picture">
+                        <img :src="contacts[active].avatar" :alt="contacts[active].name">
                     </div>
-                    <!-- /header contact -->
-                    <!-- header nav -->
-                    <nav>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <i class="fa-solid fa-paperclip"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                    </nav>
-                    <!-- /header nav -->
-                </header>
-                <!-- /header -->
-                <!-- main -->
-                <main>
-                    <div v-for="(item, index) in contacts[active].messages" class="message" :class="(item.status === 'sent') && 'message-sent', (item.status === 'received') && 'contact-message'">
-                        <div class="message-content">
-                            {{ item.message }}
-                        </div>
-                        <div class="message-time">
-                            <small>{{ time(index) }}</small>
-                        </div>
+                    <div class="contact-info">
+                        <div class="contact-name">{{ contacts[active].name }}</div>
+                        <div class="contact-last-access"><small>Ultimo accesso oggi alle 12:00</small></div>
                     </div>
-                </main>
-                <!-- /main -->
-            </div>
-            <!-- /chat -->
+                </div>
+                <!-- /header contact -->
+                <!-- header nav -->
+                <nav>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </nav>
+                <!-- /header nav -->
+            </header>
+            <!-- /header -->
+            <!-- main -->
+            <main>
+                <div v-for="(item, index) in contacts[active].messages" class="message"
+                    :class="(item.status === 'sent') && 'message-sent', (item.status === 'received') && 'contact-message'">
+                    <div class="message-content">
+                        {{ item.message }}
+                    </div>
+                    <div class="message-time">
+                        <small>{{ time(index) }}</small>
+                    </div>
+                </div>
+            </main>
+            <!-- /main -->
             <!-- footer -->
             <footer>
                 <div class="emoji">
