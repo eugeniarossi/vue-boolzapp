@@ -6,7 +6,6 @@ createApp({
     data() {
         return {
             active: 0,
-            shown: 0,
             newMessage: '',
             answerTime: 1, //sec
             searchKey: '',
@@ -179,15 +178,14 @@ createApp({
     methods: {
         selectContact(index) {
             this.active = index;
-            
         },
         time(index) {
-            let dt = this.filteredContacts()[this.active].messages[index].date;
+            let dt = this.contacts[this.active].messages[index].date;
             dt = dt.split(" ");
             return dt[1];
         },
         sendMessage() {
-            this.filteredContacts()[this.active].messages.push(
+            this.contacts[this.active].messages.push(
                 {
                     date: '10/01/2020 15:51:00',
                             message: this.newMessage,
@@ -197,7 +195,7 @@ createApp({
             this.newMessage = '';
 
             setTimeout(() => {
-                this.filteredContacts()[this.active].messages.push(
+                this.contacts[this.active].messages.push(
                     {
                         date: '10/01/2020 15:51:00',
                                 message: 'ok',
@@ -206,9 +204,8 @@ createApp({
                 );
             }, this.answerTime * 1000);
         },
-        filteredContacts() {
+        searchChat() {
             if(this.searchKey !== '') {
-                //this.active = 0;
                 return this.contacts.filter((item) => {
                     if(item.name.toLowerCase().includes(this.searchKey.toLowerCase())) {
                         return item
