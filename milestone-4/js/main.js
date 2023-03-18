@@ -207,10 +207,10 @@ createApp({
             }, this.answerTime * 1000);
         },
         filteredContacts() {
-            if(this.searchKey !== '') {
+            if(this.searchKey.trim() !== '') {
                 //this.active = 0;
                 return this.contacts.filter((item) => {
-                    if(item.name.toLowerCase().includes(this.searchKey.toLowerCase())) {
+                    if(item.name.toLowerCase().trim().includes(this.searchKey.toLowerCase().trim())) {
                         return item
                     }
                 })
