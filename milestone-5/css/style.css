@@ -1,0 +1,331 @@
+/**********************************
+************ RESET ****************
+**********************************/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/**********************************
+*********** UTILITIES *************
+**********************************/
+
+.flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.grow-1 {
+    flex-grow: 1;
+}
+
+.shrink-0 {
+    flex-shrink: 0;
+}
+
+.direction-column {
+    flex-direction: column;
+}
+
+.height-100 {
+    height: 100%;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+/**********************************
+************ COMMON ***************
+**********************************/
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: .8125rem;
+    height: 100vh;
+    background: rgb(0, 151, 136);
+    background: linear-gradient(180deg, rgba(0, 151, 136, 1) 16%, rgba(223, 221, 208, 1) 16.1%, rgba(210, 218, 220, 1) 100%);
+}
+
+i:not(.search-icon i) {
+    font-size: 1.125rem;
+}
+
+.container {
+    max-width: 75rem;
+    width: 80%;
+    max-height: 50rem;
+    height: 95%;
+    border: 1px solid #dedede;
+}
+
+img {
+    max-height: 100%;
+    display: block;
+}
+
+.contact-picture-module {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/**********************************
+************ ASIDE ****************
+**********************************/
+
+aside {
+    background-color: #fff;
+    width: 25rem;
+}
+
+/***********************************
+ ASIDE TOP ************************/
+
+aside #top #menu,
+.main-view header {
+    height: 3.75rem;
+    padding: .625rem;
+    background-color: #eaeaea;
+    outline: 1px solid #dedede;
+}
+
+/******** aside top menu user ********/
+
+aside #top #menu .user-picture,
+.main-view header .contact-picture,
+#notifications-icon {
+    height: 2.8125rem;
+    width: 2.8125rem;
+}
+
+.user-name,
+.contact-name {
+    color: #3c434d;
+    margin-bottom: -0.1875rem;
+}
+
+/******** aside top menu nav ********/
+
+aside #top #menu nav,
+.main-view header nav {
+    padding-right: .25rem;
+    color: #b1b2ad;
+}
+
+aside #top #menu nav>*,
+.main-view header nav>* {
+    padding: .375rem;
+}
+
+/******** aside top notifications ********/
+
+aside #top #notifications {
+    height: 4.375rem;
+    background-color: #8edafc;
+    padding: .75rem 1rem;
+}
+
+aside #top #notifications #notifications-icon {
+    background-color: #f5f9ff;
+    color: #8edafc;
+    margin-right: .5rem;
+}
+
+aside #top #notifications #notifications-content span {
+    color: #3c434d;
+    font-size: .75rem;
+}
+
+aside #top #notifications #notifications-content a {
+    color: #589bb6;
+}
+
+/******** aside top search ********/
+
+aside #top .search {
+    height: 2.8125rem;
+    background-color: #fafafa;
+    outline: 1px solid #fcfcfc;
+    padding: .4375rem;
+}
+
+aside #top .search .search-input-container {
+    background-color: #fff;
+    outline: 1px solid #f8f8f8;
+    color: #b1b2ad;
+}
+
+aside #top .search .search-input-container .search-icon {
+    padding: 0 1.5625rem;
+    outline: 1px solid #fcfcfc;
+}
+
+aside #top .search .search-input-container input {
+    border: none;
+    padding: .3125rem;
+}
+
+aside #top .search .search-input-container input::placeholder {
+    color: #b1b2ad;
+    font-size: .6875rem;
+}
+
+/***********************************
+ ASIDE CONTACTS *******************/
+
+aside .contacts {
+    overflow-y: scroll;
+    background-color: #fff;
+    outline: .0625rem solid #fafafa;
+}
+
+aside .contacts .contact {
+    height: 4.375rem;
+    padding-right: .5625rem;
+    outline: 1px solid #fafafa;
+}
+
+aside .contacts .contact:hover {
+    cursor: pointer;
+}
+
+aside .contacts .contact .contact-picture {
+    height: 3.4375rem;
+    width: 3.4375rem;
+    margin: 0 1.0625rem;
+}
+
+.contact-last-message,
+.contact-last-access {
+    color: #b1b2ad;
+}
+
+.active {
+    background-color: #e9ebea;
+}
+
+/**********************************
+********** MAIN VIEW **************
+**********************************/
+
+.main-view {
+    display: none;
+}
+
+.shown {
+    display: inline-flex;
+}
+
+/***********************************
+ MAIN VIEW - HEADER ***************/
+
+header .contact-picture {
+    margin-right: .875rem;
+}
+
+/***********************************
+ MAIN VIEW - MAIN *****************/
+
+.main-view main {
+    overflow-y: scroll;
+    background-image: url("../../img/mine.jpg");
+    padding: 3.125rem 5.625rem;
+    gap: .5625rem;
+}
+
+/********** messages classes ********/
+.message {
+    padding: .0625rem .25rem;
+    border-radius: .625rem;
+    min-width: 17.5rem;
+    justify-content: space-between;
+    position: relative;
+}
+
+.message-content {
+    padding: .875rem .6875rem 1.125rem;
+    color: #3c434d;
+}
+
+.message-time {
+    align-self: flex-end;
+    font-size: .75rem;
+    color: #8e8d8b;
+}
+
+.message-sent {
+    align-self: flex-end;
+    background-color: #d5f8be;
+}
+
+.contact-message {
+    align-self: flex-start;
+    background-color: #fff;
+}
+
+/********** message delete menu ********/
+
+.message-menu {
+    position: absolute;
+    top: .3125rem;
+    right: .625rem;
+    text-align: right;
+}
+
+.message-chevron,
+.message-menu {
+    color: #3c434d;
+}
+
+.message-chevron {
+    font-size: .5rem;
+}
+
+.message-menu-content {
+    background-color: #fff;
+    border: .0625rem solid #eaeaea;
+    padding: .3125rem;
+    top: 1.5625rem;
+    right: .3125rem;
+    border-radius: .3125rem;
+}
+
+.display-menu {
+    display: none;
+}
+
+/***********************************
+ MAIN VIEW - FOOTER ****************/
+
+.main-view footer {
+    height: 3.75rem;
+    background-color: #f3eeea;
+    color: #8e8d8b;
+}
+
+.main-view footer .message-input {
+    padding: .625rem 0;
+}
+
+.main-view footer .message-input input {
+    border: 1px solid #fcfcfc;
+    border-radius: .25rem;
+    padding: 0 1rem;
+}
+
+.main-view footer .message-input input::placeholder {
+    font-size: .8125rem;
+}
+
+.main-view footer .emoji,
+.main-view footer .audio {
+    padding: 0 2rem;
+}

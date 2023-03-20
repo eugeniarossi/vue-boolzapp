@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- /google fonts -->
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- /font awesome -->
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- /css -->
+</head>
+
+<body class="flex align-center justify-center">
+    <!-- app -->
+    <div id="app" class="container flex">
+        <!-- aside -->
+        <aside class="flex shrink-0 direction-column">
+            <!-- top -->
+            <div id="top">
+                <div id="menu" class="flex align-center">
+                    <!-- user -->
+                    <div id="user" class="flex align-center grow-1 height-100">
+                        <div class="user-picture contact-picture-module">
+                            <img src="../img/avatar_io.jpg" alt="profile picture">
+                        </div>
+                        <div class="user-name">
+                            Sofia
+                        </div>
+                    </div>
+                    <!-- /user -->
+                    <!-- nav -->
+                    <nav>
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </nav>
+                    <!-- /nav -->
+                </div>
+                <!-- notifications -->
+                <div id="notifications" class="flex align-center">
+                    <div id="notifications-icon" class="flex align-center justify-center contact-picture-module">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div id="notifications-content" class="flex direction-column">
+                        <span>Ricevi le notifiche di nuovi messaggi</span>
+                        <small><a href="#">Attiva le notifiche desktop</a></small>
+                    </div>
+                </div>
+                <!-- /notifications -->
+                <!-- search input -->
+                <div class="search">
+                    <div class="search-input-container flex align-center height-100">
+                        <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchKey" @keyup="filteredContacts">
+                    </div>
+                </div>
+                <!-- /search input -->
+            </div>
+            <!-- /top -->
+            <!-- contacts -->
+            <div class="contacts grow-1">
+
+                <!-- contact -->
+                <div v-for="(contact, index) in filteredContacts()" class="contact flex align-center" :class="(index === active) && 'active'"
+                    @click="selectContact(index)">
+                    <div class="contact-content flex grow-1">
+                        <div class="contact-picture contact-picture-module">
+                            <img :src="contact.avatar" :alt="contact.name">
+                        </div>
+                        <div class="contact-info grow-1">
+                            <div class="contact-name">{{ contact.name }}</div>
+                            <div class="contact-last-message"><small>Ultimo messaggio inviato</small></div>
+                        </div>
+                        <div class="contact-last-access"><small>12:00</small></div>
+                    </div>
+                </div>
+                <!-- /contact -->
+
+            </div>
+            <!-- /contacts -->
+        </aside>
+        <!-- /aside -->
+        <!-- main view -->
+        <div class="main-view flex direction-column width-100" v-for="(item, index) in contacts" :class="(index === active) && 'shown'">
+
+            <!-- header -->
+            <header class="flex">
+                <!-- header contact -->
+                <div id="header-contact" class="flex align-center grow-1 height-100">
+                    <div class="contact-picture contact-picture-module">
+                        <img :src="item.avatar" :alt="item.name">
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-name">{{ item.name }}</div>
+                        <div class="contact-last-access"><small>Ultimo accesso oggi alle 12:00</small></div>
+                    </div>
+                </div>
+                <!-- /header contact -->
+                <!-- header nav -->
+                <nav>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </nav>
+                <!-- /header nav -->
+            </header>
+            <!-- /header -->
+            <!-- main -->
+            <main class="flex grow-1 direction-column">
+                <div v-for="(message, index) in item.messages" class="message flex"
+                    :class="(message.status === 'sent') && 'message-sent', (message.status === 'received') && 'contact-message'">
+                    <div class="message-content">
+                        {{ message.message }}
+                    </div>
+                    <div class="message-time">
+                        <small>time</small>
+                    </div>
+                    <div class="message-menu">
+                        <div class="message-chevron" @click="isOpen(index)">
+                            <i class="fa-solid fa-chevron-down"></i>
+                            <div class="message-menu-content" :class="(!openMenu) && 'display-menu'">
+                                Delete message
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </main>
+            <!-- /main -->
+
+            <!-- footer -->
+            <footer class="flex align-center shrink-0">
+                <div class="emoji">
+                    <i class="fa-regular fa-face-smile"></i>
+                </div>
+                <div class="message-input grow-1 height-100" @keyup.enter="sendMessage">
+                    <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" class="height-100 width-100">
+                </div>
+                <div class="audio">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+            </footer>
+            <!-- /footer -->
+        </div>
+        <!-- /main view -->
+    </div>
+    <!-- /app -->
+    <!-- luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
+    <!-- /luxon -->
+    <!-- vuejs -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- /vuejs -->
+    <!-- js -->
+    <script src="js/main.js"></script>
+    <!-- js -->
+</body>
+
+</html>
