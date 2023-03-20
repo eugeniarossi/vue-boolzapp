@@ -72,7 +72,7 @@
             <div class="contacts">
 
                 <!-- contact -->
-                <div v-for="(contact, index) in filteredContacts()" class="contact" :class="(index === shown) && 'active'"
+                <div v-for="(contact, index) in filteredContacts()" class="contact" :class="(index === active) && 'active'"
                     @click="selectContact(index)">
                     <div class="contact-content">
                         <div class="contact-picture">
@@ -92,17 +92,17 @@
         </aside>
         <!-- /aside -->
         <!-- main view -->
-        <div class="main-view">
+        <div class="main-view" v-for="(item, index) in contacts" :class="controlActive(index)">
 
             <!-- header -->
             <header>
                 <!-- header contact -->
                 <div class="header-contact">
                     <div class="contact-picture">
-                        <img :src="filteredContacts()[shown].avatar" :alt="filteredContacts()[shown].name">
+                        <img :src="item.avatar" :alt="item.name">
                     </div>
                     <div class="contact-info">
-                        <div class="contact-name">{{ filteredContacts()[shown].name }}</div>
+                        <div class="contact-name">{{ item.name }}</div>
                         <div class="contact-last-access"><small>Ultimo accesso oggi alle 12:00</small></div>
                     </div>
                 </div>
@@ -118,13 +118,13 @@
             <!-- /header -->
             <!-- main -->
             <main>
-                <div v-for="(item, index) in filteredContacts()[shown].messages" class="message"
-                    :class="(item.status === 'sent') && 'message-sent', (item.status === 'received') && 'contact-message'">
+                <div v-for="(message) in item.messages" class="message"
+                    :class="(message.status === 'sent') && 'message-sent', (message.status === 'received') && 'contact-message'">
                     <div class="message-content">
-                        {{ item.message }}
+                        {{ message.message }}
                     </div>
                     <div class="message-time">
-                        <small>{{ time(index) }}</small>
+                        <small>time</small>
                     </div>
                 </div>
             </main>
