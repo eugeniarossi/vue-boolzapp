@@ -73,7 +73,7 @@
 
                 <!-- contact -->
                 <div v-for="(contact, index) in filteredContacts()" class="contact" :class="(index === active) && 'active'"
-                    @click="selectContact(index)">
+                    @click="selectContact(contact, index)">
                     <div class="contact-content">
                         <div class="contact-picture">
                             <img :src="contact.avatar" :alt="contact.name">

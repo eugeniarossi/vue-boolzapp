@@ -32,7 +32,7 @@ i:not(.search-icon i) {
     max-height: 50rem;
     height: 95%;
     display: flex;
-    outline: 1px solid #dedede;
+    border: 1px solid #dedede;
 }
 
 img {
