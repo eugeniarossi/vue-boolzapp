@@ -177,6 +177,7 @@ createApp({
     methods: {
         selectContact(index) {
             this.active = index;
+            this.newMessage = '';
         },
         time(index) {
             let dt = this.contacts[this.active].messages[index].date;
@@ -184,21 +185,21 @@ createApp({
             return dt[1];
         },
         sendMessage() {
-            this.contacts[this.active].messages.push(
+            let currentChat = this.active;
+            this.contacts[currentChat].messages.push(
                 {
                     date: '10/01/2020 15:51:00',
-                            message: this.newMessage,
-                            status: 'sent'
+                    message: this.newMessage,
+                    status: 'sent'
                 }
             );
             this.newMessage = '';
-
             setTimeout(() => {
-                this.contacts[this.active].messages.push(
+                this.contacts[currentChat].messages.push(
                     {
                         date: '10/01/2020 15:51:00',
-                                message: 'ok',
-                                status: 'received'
+                        message: 'ok',
+                        status: 'received'
                     }
                 );
             }, this.answerTime * 1000);

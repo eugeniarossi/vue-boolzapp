@@ -178,39 +178,39 @@ createApp({
     },
     methods: {
         selectContact(index) {
-            this.active = index;
-            
+            this.shown = index;
+            this.newMessage = '';
         },
         time(index) {
-            let dt = this.filteredContacts()[this.active].messages[index].date;
+            let dt = this.contacts[this.active].messages[index].date;
             dt = dt.split(" ");
             return dt[1];
         },
         sendMessage() {
-            this.filteredContacts()[this.active].messages.push(
+            let currentChat = this.shown;
+            this.contacts[currentChat].messages.push(
                 {
                     date: '10/01/2020 15:51:00',
-                            message: this.newMessage,
-                            status: 'sent'
+                    message: this.newMessage,
+                    status: 'sent'
                 }
             );
             this.newMessage = '';
-
             setTimeout(() => {
-                this.filteredContacts()[this.active].messages.push(
+                this.contacts[currentChat].messages.push(
                     {
                         date: '10/01/2020 15:51:00',
-                                message: 'ok',
-                                status: 'received'
+                        message: 'ok',
+                        status: 'received'
                     }
                 );
             }, this.answerTime * 1000);
         },
         filteredContacts() {
-            if(this.searchKey.trim() !== '') {
+            if (this.searchKey.trim() !== '') {
                 //this.active = 0;
                 return this.contacts.filter((item) => {
-                    if(item.name.toLowerCase().trim().includes(this.searchKey.toLowerCase().trim())) {
+                    if (item.name.toLowerCase().trim().includes(this.searchKey.toLowerCase().trim())) {
                         return item
                     }
                 })

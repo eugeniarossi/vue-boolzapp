@@ -72,7 +72,7 @@
             <div class="contacts">
 
                 <!-- contact -->
-                <div v-for="(contact, index) in filteredContacts()" class="contact" :class="(index === active) && 'active'"
+                <div v-for="(contact, index) in filteredContacts()" class="contact" :class="(index === shown) && 'active'"
                     @click="selectContact(index)">
                     <div class="contact-content">
                         <div class="contact-picture">
@@ -99,10 +99,10 @@
                 <!-- header contact -->
                 <div class="header-contact">
                     <div class="contact-picture">
-                        <img :src="filteredContacts()[active].avatar" :alt="filteredContacts()[active].name">
+                        <img :src="filteredContacts()[shown].avatar" :alt="filteredContacts()[shown].name">
                     </div>
                     <div class="contact-info">
-                        <div class="contact-name">{{ filteredContacts()[active].name }}</div>
+                        <div class="contact-name">{{ filteredContacts()[shown].name }}</div>
                         <div class="contact-last-access"><small>Ultimo accesso oggi alle 12:00</small></div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
             <!-- /header -->
             <!-- main -->
             <main>
-                <div v-for="(item, index) in filteredContacts()[active].messages" class="message"
+                <div v-for="(item, index) in filteredContacts()[shown].messages" class="message"
                     :class="(item.status === 'sent') && 'message-sent', (item.status === 'received') && 'contact-message'">
                     <div class="message-content">
                         {{ item.message }}
