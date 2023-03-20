@@ -176,15 +176,11 @@ createApp({
         }
     },
     methods: {
-        selectContact(contact, index) {
+        selectContact(index) {
             if(this.searchKey.trim() === '') {
                 this.active = index;
             } else {
-                this.contacts.forEach((element, i) => {
-                    if (element === contact) {
-                        this.active = i;
-                    } 
-                });
+                this.active = (this.contacts.indexOf(this.filteredContacts()[index]));
             }
             this.newMessage = '';
         },
