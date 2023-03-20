@@ -184,11 +184,6 @@ createApp({
             }
             this.newMessage = '';
         },
-        controlActive(index) {
-            if(index === this.active) {
-                return ('shown');
-            }
-        },
         time() {
             let dt = message.date;
             dt = dt.split(" ");

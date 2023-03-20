@@ -21,17 +21,17 @@
     <!-- /css -->
 </head>
 
-<body>
+<body class="flex align-center justify-center">
     <!-- app -->
-    <div id="app" class="container">
+    <div id="app" class="container flex">
         <!-- aside -->
-        <aside>
+        <aside class="flex shrink-0 direction-column">
             <!-- top -->
-            <div class="top">
-                <div class="menu">
+            <div id="top">
+                <div id="menu" class="flex align-center">
                     <!-- user -->
-                    <div class="user">
-                        <div class="user-picture">
+                    <div id="user" class="flex align-center grow-1 height-100">
+                        <div class="user-picture contact-picture-module">
                             <img src="../img/avatar_io.jpg" alt="profile picture">
                         </div>
                         <div class="user-name">
@@ -48,11 +48,11 @@
                     <!-- /nav -->
                 </div>
                 <!-- notifications -->
-                <div class="notifications">
-                    <div class="notifications-icon">
+                <div id="notifications" class="flex align-center">
+                    <div id="notifications-icon" class="flex align-center justify-center contact-picture-module">
                         <i class="fa-solid fa-bell-slash"></i>
                     </div>
-                    <div class="notifications-content">
+                    <div id="notifications-content" class="flex direction-column">
                         <span>Ricevi le notifiche di nuovi messaggi</span>
                         <small><a href="#">Attiva le notifiche desktop</a></small>
                     </div>
@@ -60,7 +60,7 @@
                 <!-- /notifications -->
                 <!-- search input -->
                 <div class="search">
-                    <div class="search-input-container">
+                    <div class="search-input-container flex align-center height-100">
                         <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                         <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchKey" @keyup="filteredContacts">
                     </div>
@@ -69,16 +69,16 @@
             </div>
             <!-- /top -->
             <!-- contacts -->
-            <div class="contacts">
+            <div class="contacts grow-1">
 
                 <!-- contact -->
-                <div v-for="(contact, index) in filteredContacts()" class="contact" :class="(index === active) && 'active'"
+                <div v-for="(contact, index) in filteredContacts()" class="contact flex align-center" :class="(index === active) && 'active'"
                     @click="selectContact(index)">
-                    <div class="contact-content">
-                        <div class="contact-picture">
+                    <div class="contact-content flex grow-1">
+                        <div class="contact-picture contact-picture-module">
                             <img :src="contact.avatar" :alt="contact.name">
                         </div>
-                        <div class="contact-info">
+                        <div class="contact-info grow-1">
                             <div class="contact-name">{{ contact.name }}</div>
                             <div class="contact-last-message"><small>Ultimo messaggio inviato</small></div>
                         </div>
@@ -92,13 +92,13 @@
         </aside>
         <!-- /aside -->
         <!-- main view -->
-        <div class="main-view" v-for="(item, index) in contacts" :class="controlActive(index)">
+        <div class="main-view flex direction-column width-100" v-for="(item, index) in contacts" :class="(index === active) && 'shown'">
 
             <!-- header -->
-            <header>
+            <header class="flex">
                 <!-- header contact -->
-                <div class="header-contact">
-                    <div class="contact-picture">
+                <div id="header-contact" class="flex align-center grow-1 height-100">
+                    <div class="contact-picture contact-picture-module">
                         <img :src="item.avatar" :alt="item.name">
                     </div>
                     <div class="contact-info">
@@ -117,8 +117,8 @@
             </header>
             <!-- /header -->
             <!-- main -->
-            <main>
-                <div v-for="(message) in item.messages" class="message"
+            <main class="flex grow-1 direction-column">
+                <div v-for="(message) in item.messages" class="message flex"
                     :class="(message.status === 'sent') && 'message-sent', (message.status === 'received') && 'contact-message'">
                     <div class="message-content">
                         {{ message.message }}
@@ -131,12 +131,12 @@
             <!-- /main -->
 
             <!-- footer -->
-            <footer>
+            <footer class="flex align-center shrink-0">
                 <div class="emoji">
                     <i class="fa-regular fa-face-smile"></i>
                 </div>
-                <div class="message-input" @keyup.enter="sendMessage">
-                    <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage">
+                <div class="message-input grow-1 height-100" @keyup.enter="sendMessage">
+                    <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" class="height-100 width-100">
                 </div>
                 <div class="audio">
                     <i class="fa-solid fa-microphone"></i>
